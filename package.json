@@ -1,7 +1,7 @@
 {
   "name": "omega-supreme-rooms-middleware",
-  "version": "1.0.0",
-  "description": "A middleware for omega-supreme that adds support for rooms. And ",
+  "version": "1.0.1",
+  "description": "A middleware for omega-supreme that adds support for rooms. And automatically integrates it with metroplex if included",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
