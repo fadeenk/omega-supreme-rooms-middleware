@@ -32,7 +32,7 @@
     "assume": "~1.4.1",
     "async": "~2.1.4",
     "binary-pack": "~1.0.2",
-    "ioredis": "~3.0.0-0",
+    "ioredis": "*",
     "istanbul": "~0.4.5",
     "metroplex": "~1.0.0",
     "mocha": "~3.2.0",
