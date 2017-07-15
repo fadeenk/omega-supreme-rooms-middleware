@@ -40,7 +40,7 @@
     "pre-commit": "~1.2.2",
     "primus": "~7.0.0",
     "primus-rooms": "~3.4.1",
-    "primus-rooms-redis-adapter": "~2.1.0",
+    "primus-rooms-redis-adapter": "~2.1.1",
     "request": "~2.81.0",
     "ws": "~3.0.0"
   }
