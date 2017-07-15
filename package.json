@@ -29,19 +29,19 @@
   },
   "homepage": "https://github.com/fadeenk/omega-supreme-rooms-middleware",
   "devDependencies": {
-    "assume": "~1.4.1",
-    "async": "~2.1.4",
+    "assume": "~1.5.0",
+    "async": "~2.5.0",
     "binary-pack": "~1.0.2",
     "ioredis": "*",
     "istanbul": "~0.4.5",
     "metroplex": "~1.0.0",
-    "mocha": "~3.2.0",
+    "mocha": "~3.4.1",
     "omega-supreme": "~2.1.0",
     "pre-commit": "~1.2.2",
-    "primus": "~6.0.5",
+    "primus": "~7.0.0",
     "primus-rooms": "~3.4.1",
     "primus-rooms-redis-adapter": "~2.1.1",
-    "request": "~2.79.0",
-    "ws": "~2.1.0"
+    "request": "~2.81.0",
+    "ws": "~3.0.0"
   }
 }
