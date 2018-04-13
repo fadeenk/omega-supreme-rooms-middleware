@@ -35,7 +35,7 @@
     "ioredis": "*",
     "istanbul": "~0.4.5",
     "metroplex": "~1.0.0",
-    "mocha": "~5.0.0",
+    "mocha": "~5.1.0",
     "omega-supreme": "~2.1.0",
     "pre-commit": "~1.2.2",
     "primus": "~7.1.0",
