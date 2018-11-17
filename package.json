@@ -36,7 +36,7 @@
     "istanbul": "~0.4.5",
     "metroplex": "~1.0.0",
     "mocha": "~5.2.0",
-    "omega-supreme": "~2.1.0",
+    "omega-supreme": "~3.0.0",
     "pre-commit": "~1.2.2",
     "primus": "~7.2.0",
     "primus-rooms": "~3.4.1",
