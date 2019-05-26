@@ -30,7 +30,7 @@
   "homepage": "https://github.com/fadeenk/omega-supreme-rooms-middleware",
   "devDependencies": {
     "assume": "~2.2.0",
-    "async": "~2.6.0",
+    "async": "~3.0.1",
     "binary-pack": "~1.0.2",
     "ioredis": ">=4.0.0",
     "istanbul": "~0.4.5",
