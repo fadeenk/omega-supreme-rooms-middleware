@@ -1,7 +1,6 @@
 /* istanbul ignore next */
 describe('omega supreme middleware', function () {
   'use strict';
-
   var url = require('url').resolve
     , request = require('request')
     , assume = require('assume')
@@ -12,7 +11,8 @@ describe('omega supreme middleware', function () {
     , middleware = require('./index')
     , metroplex = require('metroplex')
     , Rooms = require('primus-rooms')
-    , ioredis = new require('ioredis')()
+    , Redis = require('ioredis')
+    , ioredis = new Redis()
     , roomsAdapter = new (require('primus-rooms-redis-adapter'))(ioredis, {omegaSupreme: true, metroplex: true});
 
   var port = 1024
@@ -21,6 +21,10 @@ describe('omega supreme middleware', function () {
     , primus
     , server
     , connections = [];
+  
+  after(function(){
+    ioredis.disconnect();
+  })
 
   it('is exposed as function', function () {
     assume(middleware).to.be.a('function');
@@ -54,10 +58,11 @@ describe('omega supreme middleware', function () {
     });
 
     afterEach(function each(next) {
-      primus.destroy(function () {
-        connections = [];
-        next();
+      primus.destroy(next);
+      connections.forEach(function(connection) {
+        connection.destroy();
       });
+      connections = [];
     });
 
     var rooms = ["test1", "test2"];
@@ -78,6 +83,7 @@ describe('omega supreme middleware', function () {
     });
     it('handles single spark broadcast', function (next) {
       var client = primus.Socket(server.url);
+      connections.push(client);
       client.id(function(id) {
         request({
           url: url(server.url, '/primus/omega/supreme'),
@@ -93,6 +99,7 @@ describe('omega supreme middleware', function () {
     });
     it('does not send a request when the sparks are all local', function (next) {
       var client = primus.Socket(server.url);
+      connections.push(client);
       client.id(function get(id) {
         primus.forward(server.url, 'foo', id, function (err, data) {
           if (err) return next(err);
@@ -303,12 +310,12 @@ describe('omega supreme middleware', function () {
     });
 
     afterEach(function(next) {
-      primus.destroy(function () {
-        primus2.destroy(function () {
-          connections = [];
-          next();
-        });
+      primus.destroy();
+      primus2.destroy(next);
+      connections.forEach(function(connection) {
+        connection.destroy();
       });
+      connections = [];
     });
 
     it('should broadcast to all users in a room on different servers', function(done){

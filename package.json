@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
-    "test": "mocha",
-    "test-travis": "istanbul cover --report lcovonly _mocha -- --exit"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -32,7 +31,7 @@
     "assume": "~2.2.0",
     "async": "~3.1.0",
     "binary-pack": "~1.0.2",
-    "ioredis": ">=4.0.0",
+    "ioredis": "~4.14.0",
     "istanbul": "~0.4.5",
     "metroplex": "~1.0.0",
     "mocha": "~6.2.0",
@@ -40,8 +39,8 @@
     "pre-commit": "~1.2.2",
     "primus": "~7.3.0",
     "primus-rooms": "~3.4.1",
-    "primus-rooms-redis-adapter": "~2.2.0",
+    "primus-rooms-redis-adapter": "~2.3.1",
     "request": "~2.88.0",
-    "ws": "~7.1.0"
+    "ws": "~7.1.2"
   }
 }
