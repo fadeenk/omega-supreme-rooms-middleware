@@ -41,6 +41,6 @@
     "primus-rooms": "~3.4.1",
     "primus-rooms-redis-adapter": "~2.3.1",
     "request": "~2.88.0",
-    "ws": "~7.1.2"
+    "ws": "~7.2.0"
   }
 }
